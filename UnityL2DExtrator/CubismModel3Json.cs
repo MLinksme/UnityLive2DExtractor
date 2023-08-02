@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace UnityLive2DExtractor
+namespace UnityL2DExtractor
 {
     public class CubismModel3Json
     {

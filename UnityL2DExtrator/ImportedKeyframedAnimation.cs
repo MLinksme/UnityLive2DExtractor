@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace UnityLive2DExtractor
+namespace UnityL2DExtractor
 {
     public class ImportedKeyframedAnimation
     {

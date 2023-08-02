@@ -12,4 +12,4 @@ Drag and drop the Live2D folder to the exe. Please put multiple Live2D files int
 UnityLive2DExtractor.exe live2dfolder
 
 ## Requirements
-- [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+- [.NET 6.0](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-6.0.412-windows-x64-installer)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using AssetStudio;
 
-namespace UnityLive2DExtractor
+namespace UnityL2DExtractor
 {
     class CubismMotion3Converter
     {
@@ -23,7 +23,7 @@ namespace UnityLive2DExtractor
             foreach (var animationClip in animationClips)
             {
                 var iAnim = new ImportedKeyframedAnimation();
-                AnimationList.Add(iAnim);
+
                 iAnim.Name = animationClip.m_Name;
                 iAnim.SampleRate = animationClip.m_SampleRate;
                 iAnim.Duration = animationClip.m_MuscleClip.m_StopTime;
@@ -67,9 +67,11 @@ namespace UnityLive2DExtractor
                     iAnim.Events.Add(new ImportedEvent
                     {
                         time = m_Event.time,
-                        value = m_Event.data
+                        value = string.Format("{0}({1})", m_Event.functionName, m_Event.data)
                     });
                 }
+                if (iAnim.TrackList.Count > 0)
+                    AnimationList.Add(iAnim);
             }
         }
 
@@ -119,7 +121,7 @@ namespace UnityLive2DExtractor
             }
             else
             {
-                binding.script.TryGet(out MonoScript script);
+                if (!binding.script.TryGet(out MonoScript script)) return;
                 switch (script.m_ClassName)
                 {
                     case "CubismRenderController":

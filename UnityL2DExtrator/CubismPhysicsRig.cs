@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using AssetStudio;
 
-namespace UnityLive2DExtractor
+namespace UnityL2DExtractor
 {
     public class CubismPhysicsNormalizationTuplet
     {
@@ -110,6 +110,8 @@ namespace UnityLive2DExtractor
 
         public CubismPhysicsSubRig(BinaryReader reader)
         {
+            var name = reader.ReadAlignedString();
+
             var numInput = reader.ReadInt32();
             Input = new CubismPhysicsInput[numInput];
             for (int i = 0; i < numInput; i++)
@@ -139,6 +141,7 @@ namespace UnityLive2DExtractor
         public CubismPhysicsRig(BinaryReader reader)
         {
             var numSubRigs = reader.ReadInt32();
+            Console.WriteLine($"PhysicSubRigsCount: {numSubRigs}");
             SubRigs = new CubismPhysicsSubRig[numSubRigs];
             for (int i = 0; i < numSubRigs; i++)
             {
